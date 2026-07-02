@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stefan Herytash — Researcher, WU Vienna</title>
+<meta name="description" content="Stefan Herytash is an Assistant Professor at WU Vienna studying how organizations make consequential decisions under technological change — at the intersection of strategic management, applied AI, and formal modeling.">
+<meta name="author" content="Stefan Herytash">
+
+<!-- Open Graph / link previews -->
+<meta property="og:title" content="Stefan Herytash — Researcher, WU Vienna">
+<meta property="og:description" content="Strategic management, applied AI, and formal modeling.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper:      #FBFBF8;
+    --paper-tint: #F3F2ED;
+    --ink:        #1A1918;
+    --ink-soft:   #565049;
+    --line:       #E5E2DA;
+    --accent:     #21454C;
+    --accent-lift:#2E5C64;
+
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
+    --sans:  "Hanken Grotesk", system-ui, -apple-system, sans-serif;
+    --mono:  "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+
+    --wrap: 44rem;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:clamp(1rem, 0.96rem + 0.2vw, 1.075rem);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+
+  .wrap{
+    max-width:var(--wrap);
+    margin-inline:auto;
+    padding-inline:clamp(1.25rem, 5vw, 2rem);
+  }
+
+  a{ color:inherit; }
+
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:0.72rem;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin:0 0 1.4rem;
+  }
+
+  /* Signature: research concepts set in accent italic */
+  .hl{ font-family:var(--serif); font-style:italic; font-weight:500; color:var(--accent); }
+
+  /* ─────────────────────────── Top bar ─────────────────────────── */
+  .topbar{
+    position:sticky; top:0; z-index:20;
+    background:color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter:saturate(1.1) blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    gap:1rem; min-height:3.5rem; flex-wrap:wrap;
+  }
+  .brand{ font-family:var(--serif); font-weight:500; font-size:1.08rem; text-decoration:none; white-space:nowrap; }
+  .nav{ display:flex; gap:clamp(0.9rem,3vw,1.6rem); }
+  .nav a{
+    font-size:0.85rem; text-decoration:none; color:var(--ink-soft);
+    padding:0.15rem 0; position:relative; transition:color .2s ease;
+  }
+  .nav a::after{
+    content:""; position:absolute; left:0; right:100%; bottom:-1px; height:1.5px;
+    background:var(--accent); transition:right .28s ease;
+  }
+  .nav a:hover, .nav a.active{ color:var(--ink); }
+  .nav a:hover::after, .nav a.active::after{ right:0; }
+
+  /* ─────────────────────────── Sections ─────────────────────────── */
+  section{ scroll-margin-top:4.5rem; }
+  .block{ padding-block:clamp(2.75rem, 6vw, 4.25rem); border-top:1px solid var(--line); }
+
+  .hero{ padding-block:clamp(3.5rem, 9vw, 6rem) clamp(2.75rem, 6vw, 4rem); }
+  .hero h1{
+    font-family:var(--serif); font-weight:400;
+    font-size:clamp(2rem, 1.3rem + 3.2vw, 3.25rem);
+    line-height:1.14; letter-spacing:-0.01em;
+    margin:0 0 1.5rem; max-width:20ch;
+  }
+  .hero .lede{
+    font-size:clamp(1.05rem, 1rem + 0.4vw, 1.2rem);
+    color:var(--ink-soft); max-width:54ch; margin:0 0 2rem;
+  }
+
+  .actions{ display:flex; flex-wrap:wrap; gap:0.7rem 0.9rem; align-items:center; }
+  .btn{
+    display:inline-flex; align-items:center; gap:0.4rem;
+    font-family:var(--sans); font-size:0.9rem; font-weight:500;
+    text-decoration:none; padding:0.55rem 1.05rem; border-radius:999px;
+    border:1px solid var(--accent); color:#fff; background:var(--accent);
+    transition:background .2s ease, transform .2s ease;
+  }
+  .btn:hover{ background:var(--accent-lift); transform:translateY(-1px); }
+  .btn-ghost{ color:var(--accent); background:transparent; }
+  .btn-ghost:hover{ background:var(--paper-tint); }
+
+  .headings h2{
+    font-family:var(--serif); font-weight:500;
+    font-size:clamp(1.5rem, 1.2rem + 1vw, 1.9rem);
+    line-height:1.2; margin:0 0 1rem; letter-spacing:-0.005em;
+  }
+  .prose{ max-width:62ch; }
+  .prose p{ margin:0 0 1rem; }
+  .prose p:last-child{ margin-bottom:0; }
+
+  .questions{ list-style:none; margin:1.6rem 0 0; padding:0; }
+  .questions li{
+    font-family:var(--serif); font-style:italic; font-size:1.2rem;
+    line-height:1.4; color:var(--ink); padding-left:1.4rem; position:relative;
+    margin-bottom:0.7rem; max-width:48ch;
+  }
+  .questions li::before{ content:"—"; position:absolute; left:0; color:var(--accent); font-style:normal; }
+
+  /* ── Working papers ── */
+  .papers{ margin-top:0.5rem; }
+  .paper{ padding:1.3rem 0; }
+  .paper + .paper{ border-top:1px solid var(--line); }
+  .paper-head{ display:flex; justify-content:space-between; gap:1.25rem; align-items:baseline; }
+  .paper-title{ font-family:var(--serif); font-weight:500; font-size:1.2rem; line-height:1.3; max-width:52ch; }
+  .paper-status{
+    font-family:var(--mono); font-size:0.7rem; letter-spacing:0.05em; text-transform:uppercase;
+    color:var(--accent); white-space:nowrap; padding-top:0.3rem;
+  }
+  .paper-meta{ font-size:0.88rem; color:var(--ink-soft); margin-top:0.4rem; }
+
+  /* ── Compact rows (talks, background) ── */
+  .rows{ margin-top:0.5rem; }
+  .row{ display:flex; gap:1.1rem; padding:0.85rem 0; align-items:baseline; }
+  .row + .row{ border-top:1px solid var(--line); }
+  .row .tag{
+    font-family:var(--mono); font-size:0.72rem; color:var(--accent);
+    white-space:nowrap; min-width:2.9rem; padding-top:0.15rem;
+  }
+  .row-main{ flex:1; }
+  .row-title{ font-family:var(--serif); font-size:1.08rem; line-height:1.3; }
+  .row-sub{ font-size:0.85rem; color:var(--ink-soft); margin-top:0.15rem; }
+
+  .note{ font-size:0.88rem; color:var(--ink-soft); margin-top:1.4rem; }
+
+  /* ── Contact ── */
+  .contact-links{
+    display:flex; flex-wrap:wrap; gap:0.5rem 1.5rem; margin-top:1.4rem; font-size:1.02rem;
+  }
+  .contact-links a{
+    text-decoration:none; color:var(--ink);
+    background-image:linear-gradient(var(--accent),var(--accent));
+    background-size:0% 1.5px; background-repeat:no-repeat; background-position:0 100%;
+    transition:background-size .3s ease, color .2s ease; padding-bottom:2px;
+  }
+  .contact-links a:hover{ background-size:100% 1.5px; color:var(--accent); }
+
+  footer{
+    padding-block:2.5rem 3.5rem;
+    font-family:var(--mono); font-size:0.74rem; letter-spacing:0.04em;
+    color:var(--ink-soft); border-top:1px solid var(--line);
+  }
+
+  a:focus-visible, .btn:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; border-radius:4px; }
+
+  @media (prefers-reduced-motion:no-preference){
+    .reveal{ opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease; }
+    .reveal.in{ opacity:1; transform:none; }
+  }
+  @media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } }
+
+  @media (max-width:520px){
+    .brand{ font-size:1rem; }
+    .paper-head{ flex-direction:column; gap:0.15rem; }
+    .paper-status{ padding-top:0; }
+  }
+</style>
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="#top">Stefan Herytash</a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#research">Research</a>
+        <a href="#papers">Papers</a>
+        <a href="#talks">Talks</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap" id="top">
+
+    <!-- ══════════════════════════ HERO ══════════════════════════ -->
+    <section class="hero reveal">
+      <p class="eyebrow">Assistant Professor · WU Vienna</p>
+      <h1>I study how organizations make <span class="hl">consequential decisions</span> under <span class="hl">technological change</span>.</h1>
+      <p class="lede">I&rsquo;m Stefan Herytash, at WU Vienna&rsquo;s Institute for Strategy, Technology and Organization. My work sits at the intersection of strategic management, applied AI, and formal modeling.</p>
+      <div class="actions">
+        <a class="btn" href="mailto:stefan.herytash@wu.ac.at">Email me</a>
+        <a class="btn btn-ghost" href="https://scholar.google.com/citations?user=GsOgzikAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+        <a class="btn btn-ghost" href="stefan-herytash-cv.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════ RESEARCH ══════════════════════════ -->
+    <section id="research" class="block headings reveal">
+      <p class="eyebrow">Research</p>
+      <div class="prose">
+        <p>My research sits at the intersection of <span class="hl">strategic management</span>, <span class="hl">applied AI</span>, and <span class="hl">formal modeling</span>. I study how organizations make consequential decisions under technological change &mdash; from regulation and lobbying to firm strategy and labor markets.</p>
+        <p>A recurring thread is using large language models as a research instrument: to simulate human decision-making, forecast the results of behavioral experiments, and probe how well AI can stand in for real people. I trained as a mathematician before moving into management, and I&rsquo;m drawn to problems where careful formal reasoning meets messy organizational reality.</p>
+      </div>
+      <ul class="questions">
+        <li>How faithfully can large language models simulate human decision-making?</li>
+        <li>How do firms and institutions respond when technology reshapes the rules?</li>
+      </ul>
+    </section>
+
+    <!-- ══════════════════════════ WORKING PAPERS ══════════════════════════ -->
+    <section id="papers" class="block headings reveal">
+      <p class="eyebrow">Working papers</p>
+      <div class="papers">
+
+        <div class="paper">
+          <div class="paper-head">
+            <span class="paper-title">Forecasting Experimental Effects with Large Language Models</span>
+            <span class="paper-status">R&amp;R</span>
+          </div>
+          <div class="paper-meta">Herytash, S. &middot; International Journal of Research in Marketing</div>
+        </div>
+
+        <div class="paper">
+          <div class="paper-head">
+            <span class="paper-title">Strong Courts or Strong Incumbents? Lobbying and the Adoption of Digital Public Infrastructure</span>
+            <span class="paper-status">Under review</span>
+          </div>
+          <div class="paper-meta">Herytash, S. &middot; Organization Science</div>
+        </div>
+
+        <div class="paper">
+          <div class="paper-head">
+            <span class="paper-title">The Matching Cost of Transparency: Pay Transparency Regulations, Firm Strategic Response and Labor Market Outcomes</span>
+            <span class="paper-status">In preparation</span>
+          </div>
+          <div class="paper-meta">Herytash, S. &middot; Targeting Management Science</div>
+        </div>
+
+        <div class="paper">
+          <div class="paper-head">
+            <span class="paper-title">Meta-Scientific Research in Marketing: Understanding the Impact of Researcher Choices</span>
+            <span class="paper-status">Forthcoming</span>
+          </div>
+          <div class="paper-meta">Multi-author consortium &middot; International Journal of Research in Marketing</div>
+        </div>
+
+        <div class="paper">
+          <div class="paper-head">
+            <span class="paper-title">Evaluating Behavioral Alignment at Scale</span>
+            <span class="paper-status">In preparation</span>
+          </div>
+          <div class="paper-meta">Multi-author consortium &middot; Targeting NeurIPS</div>
+        </div>
+
+        <div class="paper">
+          <div class="paper-head">
+            <span class="paper-title">Forecasting Ad Response with Machine Learning</span>
+            <span class="paper-status">In preparation</span>
+          </div>
+          <div class="paper-meta">Herytash, S., Schwaiger, M., Rapp, V.</div>
+        </div>
+
+        <div class="paper">
+          <div class="paper-head">
+            <span class="paper-title">Beyond A/B: Combining Observational Logs and Small Randomized Control Trials for Valid Treatment Effects</span>
+            <span class="paper-status">In preparation</span>
+          </div>
+          <div class="paper-meta">Herytash, S.</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════ TALKS ══════════════════════════ -->
+    <section id="talks" class="block headings reveal">
+      <p class="eyebrow">Selected talks</p>
+      <div class="rows">
+        <div class="row">
+          <span class="tag">2025</span>
+          <div class="row-main">
+            <div class="row-title">Simulating Consumers: Leveraging Large Language Models for Scalable Behavioral Experimentation</div>
+            <div class="row-sub">Global Marketing Conference &middot; Hong Kong</div>
+          </div>
+        </div>
+        <div class="row">
+          <span class="tag">2025</span>
+          <div class="row-main">
+            <div class="row-title">Validity in Simulation: How Well Do Large Language Models Predict Real Consumer Choices?</div>
+            <div class="row-sub">Academy of Marketing Science &middot; Montreal</div>
+          </div>
+        </div>
+        <div class="row">
+          <span class="tag">2025</span>
+          <div class="row-main">
+            <div class="row-title">Large Language Models as Behavioral Proxies: A Critical Perspective on Human&ndash;AI Substitutability in Marketing Research</div>
+            <div class="row-sub">American Marketing Association &middot; Phoenix</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════ BACKGROUND ══════════════════════════ -->
+    <section id="background" class="block headings reveal">
+      <p class="eyebrow">Background</p>
+      <div class="rows">
+        <div class="row">
+          <span class="tag">2026</span>
+          <div class="row-main">
+            <div class="row-title">PhD in Management &mdash; LMU Munich</div>
+            <div class="row-sub">Thesis: Simulating Human Decision-Making with Large Language Models &middot; summa cum laude</div>
+          </div>
+        </div>
+        <div class="row">
+          <span class="tag">2024</span>
+          <div class="row-main">
+            <div class="row-title">Master of Research in Business &mdash; LMU Munich</div>
+            <div class="row-sub">With highest distinction</div>
+          </div>
+        </div>
+        <div class="row">
+          <span class="tag">2021</span>
+          <div class="row-main">
+            <div class="row-title">MSc in Mathematics &mdash; University of Zurich</div>
+            <div class="row-sub">Thesis on the principal&ndash;agent framework, supervised by Dylan Possama&iuml; (ETH Zurich)</div>
+          </div>
+        </div>
+        <div class="row">
+          <span class="tag">2019</span>
+          <div class="row-main">
+            <div class="row-title">BSc in Mathematics &mdash; TU Wien</div>
+            <div class="row-sub">Thesis on optimal stopping</div>
+          </div>
+        </div>
+      </div>
+      <p class="note">Previously Research &amp; Teaching Assistant at LMU Munich (2022&ndash;2025). Recognition includes the LMU Excellence Mentoring Stipend and the LERU Doctoral Summer School on AI (2025).</p>
+    </section>
+
+    <!-- ══════════════════════════ CONTACT ══════════════════════════ -->
+    <section id="contact" class="block headings reveal">
+      <p class="eyebrow">Contact</p>
+      <h2>Get in touch</h2>
+      <div class="prose">
+        <p>The best way to reach me is email. I&rsquo;m always glad to hear from potential collaborators, students, and anyone working at the intersection of strategy, AI, and organizations.</p>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:stefan.herytash@wu.ac.at">stefan.herytash@wu.ac.at</a>
+        <a href="https://scholar.google.com/citations?user=GsOgzikAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+        <a href="https://www.linkedin.com/in/stefan-herytash-606437253/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="stefan-herytash-cv.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">© 2026 Stefan Herytash · Institute for Strategy, Technology and Organization, WU Vienna</div>
+  </footer>
+
+  <script>
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reveals = document.querySelectorAll('.reveal');
+    if (reduce || !('IntersectionObserver' in window)) {
+      reveals.forEach(el => el.classList.add('in'));
+    } else {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold: 0.12 });
+      reveals.forEach(el => io.observe(el));
+    }
+
+    const links = [...document.querySelectorAll('.nav a')];
+    const map = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    if ('IntersectionObserver' in window && map.length) {
+      const spy = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id));
+          }
+        });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      map.forEach(sec => spy.observe(sec));
+    }
+  </script>
+
+</body>
+</html>
